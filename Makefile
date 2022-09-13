@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dmaldona <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/05 12:35:32 by dmaldona          #+#    #+#              #
-#    Updated: 2022/07/05 12:57:50 by dmaldona         ###   ########.fr        #
+#    Created: 2022/09/11 17:55:42 by dmaldona          #+#    #+#              #
+#    Updated: 2022/09/11 17:55:42 by dmaldona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,8 @@ $(NAME): $(OBJS)
 
 all:	$(NAME)
 clean:
-	$(RM) $(NAME) $(OBJS)
+		$(RM) $(NAME) $(OBJS)
 fclean: clean
-	$(RM) $(NAME)
+		$(RM) $(NAME)
 re:		fclean $(NAME)
-
 .PHONY:	all clean fclean re bonus
