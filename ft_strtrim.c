@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 21:08:51 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/18 21:09:37 by dmaldona         ###   ########.fr       */
+/*   Created: 2022/09/16 14:29:54 by dmaldona          #+#    #+#             */
+/*   Updated: 2022/09/16 14:30:52 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char    *ft_strtrim(char const *s1, char const *set)
 {
-	
+    char    *s;
+    
 }

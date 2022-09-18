@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaldona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 11:07:00 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/07/05 13:20:30 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/18 21:06:07 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+void    *ft_memset(void *b, int c, size_t len);
 
 /* string functions */
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 void	*ft_bzero(void *s, size_t n);
+char	*ft_strdup(const char *s1);
 
 /** complex functions **/
 
