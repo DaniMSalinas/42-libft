@@ -6,7 +6,7 @@
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 21:08:51 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/19 11:09:43 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/20 20:41:53 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	len_src = ft_strlen(src);
 	len_dst = ft_strlen(dst);
+	if (!dstsize)
+		return (len_src);
 	if (len_dst >= dstsize)
 		return (dstsize + len_src);
 	i = 0;
