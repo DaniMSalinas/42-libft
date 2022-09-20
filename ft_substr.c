@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 11:11:26 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/19 11:14:58 by dmaldona         ###   ########.fr       */
+/*   Created: 2022/09/19 13:32:00 by dmaldona          #+#    #+#             */
+/*   Updated: 2022/09/20 10:45:48 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	n;
+	char	*substring;
 
-	n = 0;
-	if (!dstsize)
-		return (ft_strlen(src));
-	while (n < dstsize - 1 && src[n])
-	{
-		dst[n] = src[n];
-		n++;
-	}
-	dst[n] = '\0';
-	return (ft_strlen(src));
+	substring = ft_calloc(len + 1, sizeof(char *));
+	if (!substring)
+		return (NULL);
+	ft_memcpy(substring, &s[start], len);
+	return (substring);
 }

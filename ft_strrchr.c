@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                        :+:      :+:    :+:  */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaldona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 17:31:23 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/07/05 13:53:27 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:32:29 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	l;
-	char	*aux;
-	size_t	i;
+	const char		*l;
+	unsigned char	aux;
 
-	l = (char)c;
-	i = 0;
-	while (s[i] != '\0')
+	aux = (unsigned char)c;
+	l = s;
+	while (*s)
+		s++;
+	while (*s != *l)
 	{
-		if (s[i] == l)
-			aux = (char *)&s[i];
-		i++;
+		if (*s == aux)
+			return ((char *)s);
+		l--;
 	}
-	if (l == '\0')
-		return (aux);
-	else
-		return (NULL);
+	if (*s == aux)
+		return ((char *)s);
+	return (NULL);
 }
