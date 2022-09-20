@@ -6,7 +6,7 @@
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 11:07:00 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/20 10:09:14 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:34:21 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 
 /* string functions */
-//char	*ft_strrchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 void	*ft_bzero(void *s, size_t n);
@@ -52,4 +52,11 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
 #endif

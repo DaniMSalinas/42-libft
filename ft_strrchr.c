@@ -6,7 +6,7 @@
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 17:31:23 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/19 12:32:29 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:11:39 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	l = s;
 	while (*s)
 		s++;
-	while (*s != *l)
+	while (s != l)
 	{
 		if (*s == aux)
 			return ((char *)s);
-		l--;
+		s--;
 	}
 	if (*s == aux)
 		return ((char *)s);
