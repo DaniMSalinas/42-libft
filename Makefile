@@ -6,7 +6,7 @@
 #    By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 17:55:42 by dmaldona          #+#    #+#              #
-#    Updated: 2022/09/11 17:55:42 by dmaldona         ###   ########.fr        #
+#    Updated: 2022/09/21 18:20:39 by dmaldona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,29 +47,30 @@ SRCS	= ft_atoi.c\
 		ft_striteri.c \
 		ft_strmapi.c
 
-BONUS-SRCS	= ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c
+BONUS-SRCS	= ft_lstnew_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstadd_back_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c
 
 OBJS	= $(SRCS:.c=.o)
 BOBJS	= $(BONUS-SRCS:.c=.o)
 NAME	= libft.a
 
-all: $(NAME) $(BONUS)
+all: $(NAME) bonus
 bonus: $(BONUS)
 
 $(NAME): $(OBJS) $(LIB)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-$(BONUS): $(BOBJS) $(LIB)
-	ar rc $(BONUS) $(BOBJS)
-	ranlib $(BONUS)
+bonus: $(BOBJS) $(LIB)
+	ar rc $(NAME) $(BOBJS)
+	ranlib $(NAME)
 
 $(OBJS): $(SRCS) $(LIB)
 	gcc $(Cflags) -c $(SRCS) 
@@ -78,10 +79,10 @@ $(BOBJS): $(BONUS-SRCS) $(LIB)
 	gcc $(Cflags) -c $(BONUS-SRCS)
 
 clean:
-	rm -f $(OBJS) $(OBJBONUS)
+	rm -f $(OBJS) $(BOBJS) $(OBJBONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BOBJS)
 
 re: fclean all
 

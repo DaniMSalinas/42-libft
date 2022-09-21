@@ -6,7 +6,7 @@
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:39:43 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/20 18:45:09 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:21:51 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	size;
 	char	*n;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	size = ft_strlen(s);
 	n = ft_strdup(s);

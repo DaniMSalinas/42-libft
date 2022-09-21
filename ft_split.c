@@ -6,7 +6,7 @@
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:36:27 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/20 12:01:56 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/21 21:27:40 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	split = (char **)malloc(sizeof(char *) * number_of_words(s, c) + 1);
+	split = (char **)malloc(sizeof(char *) * (number_of_words(s, c) + 1));
 	if (!split)
 		return (NULL);
 	split[number_of_words(s, c)] = NULL;
@@ -80,23 +80,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (split);
 }
-
-/*
-int main()
-{
-    char    **ptr;
-
-	ptr = ft_split("aaaaaa", 'a');
-	if (*ptr == NULL)
-	{
-		printf("NULL\n");
-		return (0);
-	}
-    while (*ptr != NULL)
-    {
-        printf("%s\n", *ptr);
-        ptr++;
-    }
-	return (0);
-}
-*/

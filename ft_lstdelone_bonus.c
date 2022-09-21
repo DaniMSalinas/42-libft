@@ -6,7 +6,7 @@
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 13:07:46 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/21 13:49:12 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:29:25 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst)
+	if (lst && del)
 	{
-		del(lst);
+		del(lst->content);
+		free(lst);
 	}
 }
