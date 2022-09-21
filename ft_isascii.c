@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaldona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 16:20:44 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/07/05 13:19:03 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/21 10:41:07 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }	

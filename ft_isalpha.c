@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaldona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:06:44 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/07/05 13:11:24 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/21 10:41:21 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
