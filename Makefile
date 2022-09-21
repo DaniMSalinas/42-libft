@@ -47,20 +47,38 @@ SRCS	= ft_atoi.c\
 		ft_striteri.c \
 		ft_strmapi.c
 
+BONUS-SRCS	= ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
+
 OBJS	= $(SRCS:.c=.o)
+BOBJS	= $(BONUS-SRCS:.c=.o)
 NAME	= libft.a
 
-all: $(NAME)
+all: $(NAME) $(BONUS)
+bonus: $(BONUS)
 
 $(NAME): $(OBJS) $(LIB)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
-		
+
+$(BONUS): $(BOBJS) $(LIB)
+	ar rc $(BONUS) $(BOBJS)
+	ranlib $(BONUS)
+
 $(OBJS): $(SRCS) $(LIB)
 	gcc $(Cflags) -c $(SRCS) 
 
+$(BOBJS): $(BONUS-SRCS) $(LIB)
+	gcc $(Cflags) -c $(BONUS-SRCS)
+
 clean:
-	rm  -f $(OBJS) $(OBJBONUS)
+	rm -f $(OBJS) $(OBJBONUS)
 
 fclean: clean
 	rm -f $(NAME)
