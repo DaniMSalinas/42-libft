@@ -6,7 +6,7 @@
 /*   By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:05:56 by dmaldona          #+#    #+#             */
-/*   Updated: 2022/09/20 13:41:53 by dmaldona         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:32:12 by dmaldona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_itoa(int n)
 		signo = 1;
 	m *= signo;
 	size = number_size(m, signo);
-	s = (char *)ft_calloc(size + 1, sizeof(char *));
+	s = (char *)ft_calloc(size + 1, sizeof(char));
 	if (!s)
 		return (NULL);
 	while (size > 0)
