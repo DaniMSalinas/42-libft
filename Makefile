@@ -6,7 +6,7 @@
 #    By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 17:55:42 by dmaldona          #+#    #+#              #
-#    Updated: 2022/09/21 18:20:39 by dmaldona         ###   ########.fr        #
+#    Updated: 2022/09/23 18:41:17 by dmaldona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,6 @@ BOBJS	= $(BONUS-SRCS:.c=.o)
 NAME	= libft.a
 
 all: $(NAME) bonus
-bonus: $(BONUS)
 
 $(NAME): $(OBJS) $(LIB)
 	ar rc $(NAME) $(OBJS)
