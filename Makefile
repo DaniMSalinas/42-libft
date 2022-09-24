@@ -6,7 +6,7 @@
 #    By: dmaldona <dmaldona@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 17:55:42 by dmaldona          #+#    #+#              #
-#    Updated: 2022/09/23 18:41:17 by dmaldona         ###   ########.fr        #
+#    Updated: 2022/09/24 11:43:52 by dmaldona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,32 +57,23 @@ BONUS-SRCS	= ft_lstnew_bonus.c \
 		ft_lstiter_bonus.c \
 		ft_lstmap_bonus.c
 
-OBJS	= $(SRCS:.c=.o)
-BOBJS	= $(BONUS-SRCS:.c=.o)
-NAME	= libft.a
+OBJS		= $(SRCS:%.c=%.o)
+BOBJS		= $(BONUS-SRCS:%.c=%.o)
+NAME		= libft.a
+NAME_B		= .bonus
+$(NAME):	$(OBJS)
+				ar rc $(NAME) $(OBJS)
+				ranlib $(NAME)
+$(NAME_B): 	$(OBJS) $(BOBJS)
+				ar rc $(NAME) $(OBJS) $(BOBJS)
+				ranlib $(NAME)
+				@touch .bonus
 
-all: $(NAME) bonus
-
-$(NAME): $(OBJS) $(LIB)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-
-bonus: $(BOBJS) $(LIB)
-	ar rc $(NAME) $(BOBJS)
-	ranlib $(NAME)
-
-$(OBJS): $(SRCS) $(LIB)
-	gcc $(Cflags) -c $(SRCS) 
-
-$(BOBJS): $(BONUS-SRCS) $(LIB)
-	gcc $(Cflags) -c $(BONUS-SRCS)
-
-clean:
-	rm -f $(OBJS) $(BOBJS) $(OBJBONUS)
-
-fclean: clean
-	rm -f $(NAME) $(BOBJS)
-
-re: fclean all
-
+bonus:		$(NAME_B)
+all:		$(NAME)
+clean:		
+			rm -f $(OBJS) $(BOBJS)
+fclean: 	clean
+			rm -f $(NAME) $(NAME_B)
+re:			fclean bonus
 .PHONY:	all clean fclean re bonus
